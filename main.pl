@@ -24,6 +24,14 @@ my $dbpath  = '/home/user/.dosbox';    # Path to your DOSBox local folder
 my $tmppath = '/tmp/dosbox';           # Temp location for all staging
 my $cfgname = 'dosbox-0.74-3.conf';
 
+# Application login info for posting to Twitter
+my %twitter_auth_info = (
+    consumer_key    => '',
+    consumer_secret => '',
+    access_token    => '',
+    access_token_secret => '',
+);
+
 ##############################################################################
 # HELPERS
 ##############################################################################
@@ -208,7 +216,7 @@ my $theme = Theme->new( $tmppath . '/c' );
 print $theme->detail() . "\n\n";
 
 ######################################
-# fuck with dosbox conf
+# mess with dosbox conf
 {
     open( my $fpo, '>', "$dbpath/$cfgname" )
       or die "failed opening $dbpath/$cfgname: $!";
@@ -241,7 +249,7 @@ foreach my $file ( keys %{ $theme_info{files} } ) {
       [ $theme_info{name}, $theme_info{files}{$file}, $theme ];
 }
 
-# fuck with files
+# edit all the files
 foreach my $file ( keys %edits ) {
     print "EDIT($file)...\n";
     edit( $file, $tmppath, $edits{$file} );
@@ -293,18 +301,14 @@ print `$ffmpeg_line` . "\n";
 
 ######################################
 # shove on Tweeta
-die;
 print "Posting on Twitter...\n";
 
 # Connect to Twitter
 
 ## NOTE: you must supply valid credentials here for application access
 my $client = Twitter::API->new_with_traits(
-    traits          => qw( NormalizeBooleans DecodeHtmlEntities RetryOnError ),
-    consumer_key    => '',
-    consumer_secret => '',
-    access_token    => '',
-    access_token_secret => '',
+    traits => qw( NormalizeBooleans DecodeHtmlEntities RetryOnError ),
+    %twitter_auth_info
 );
 
 eval {
