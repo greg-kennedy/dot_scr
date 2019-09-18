@@ -10,6 +10,8 @@ dot\_scr is a Perl process that records DOSBox movies of Windows 3.1 screensaver
 
 You may [**see the bot on Twitter here**](https://twitter.com/dot_scr).
 
+You can [**view the list of supported screensavers here**](MASTER_LIST.md).
+
 How It Works
 ------------
 
