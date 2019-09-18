@@ -29,7 +29,7 @@ sub new {
     my $basepath = shift;
 
     my $now = time();
-    my ( undef, undef, undef, undef, $mday, $mon, $year, undef, undef, undef )
+    my ( undef, undef, undef, $mday, $mon, $year, undef, undef, undef )
       = localtime($now);
     my $self = {
         current_year  => $year + 1900,
@@ -46,8 +46,8 @@ sub new {
 sub detail {
     my $self = shift;
 
-    return
-"Date $self->{current_year}-$self->{current_month}-$self->{current_day} (Day $self->{day})";
+    return sprintf("Date %04d-%02-%02d (Day %d)",
+      $self->{current_year}, $self->{current_month}, $self->{current_day}, $self->{day});
 }
 
 ##############################################################################
@@ -78,8 +78,7 @@ sub append_scranticini {
     my ( $self, $line ) = @_;
 
     if ( !defined $line ) {
-
-        print $fp <<"EOF";
+        $line = <<"EOF";
   [ScreenSaver.ScreenAntics]
   SourceDir=C:\\SIERRA\\SCRANTIC
   Background=1
