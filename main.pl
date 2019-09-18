@@ -148,32 +148,62 @@ my $tmppath = $config{tmppath};
 print "Loading screensaver units...\n";
 
 my $unit;
+my %unit_info;
+
 if ( @ARGV == 1 ) {
+
+    # Specific unit desired: load it
     $unit = 'Unit::' . $ARGV[0];
+    load $unit;
+    %unit_info = $unit->info();
 } else {
+
+    # Load all available modules, pick one by weight
     opendir( my $dh, "Unit" );
-    my @files = readdir($dh);
+    my @files = sort readdir($dh);
     closedir($dh);
 
-    my @units;
+    my $total_weight = 0;
+    my %units;
     foreach my $file (@files) {
         if ( $file =~ m/^(.+)\.pm$/ ) {
             my $mod_name = 'Unit::' . $1;
             print " . $mod_name\n";
-            push @units, $mod_name;
+
+            # Load the module and extract info.
+            #  If weight is not defined, default to 1.
+            load $mod_name;
+            my %mod_info = $mod_name->info();
+            $mod_info{weight} ||= 1;
+
+            # Store the info in a hash, and keep a
+            #  running count of the total weights
+            $units{$mod_name} = \%mod_info;
+            $total_weight += $mod_info{weight};
         }
     }
-    print 'Found ' . scalar(@units) . " units.\n";
+    print 'Found '
+      . scalar( keys %units )
+      . " units, total weight $total_weight.\n";
 
     # Pick today's winner
-    $unit = $units[ rand @units ];
+    my $goal = int rand($total_weight);
+
+    # Step through sorted array and subtract each weight.
+    foreach my $mod_name ( sort keys %units ) {
+        $goal -= $units{$mod_name}{weight};
+
+        # Out of weights: we must've landed :)
+        if ( $goal < 0 ) {
+            $unit      = $mod_name;
+            %unit_info = %{ $units{$unit} };
+            last;
+        }
+    }
 }
 
-######################################
-# Load the specific unit picked, and create one instance
+# Print the winner
 print "\n=== $unit ===\n";
-load $unit;
-my %mod_info = $unit->info();
 
 ######################################
 # Load the theme unit too
@@ -191,7 +221,7 @@ make_path( "$tmppath/c", "$tmppath/capture", "$tmppath/source" );
 print "Deploying __main__.zip...\n";
 deploy( './payload/__main__.zip', "$tmppath/c/" );
 
-foreach my $payload ( @{ $mod_info{payload} } ) {
+foreach my $payload ( @{ $unit_info{payload} } ) {
     print "Deploying $payload...\n";
     deploy( "./payload/$payload" => "$tmppath/c/" );
 }
@@ -220,9 +250,9 @@ print $theme->detail() . "\n\n";
         chomp $line;
 
         if ( $line =~ m/^demostart=/ ) {
-            $line = "demostart=" . $mod_info{dosbox}{start};
-        } elsif ( $mod_info{dosbox}{cycles} && $line =~ m/^cycles=/ ) {
-            $line = "cycles=fixed " . $mod_info{dosbox}{cycles};
+            $line = "demostart=" . $unit_info{dosbox}{start};
+        } elsif ( $unit_info{dosbox}{cycles} && $line =~ m/^cycles=/ ) {
+            $line = "cycles=fixed " . $unit_info{dosbox}{cycles};
         }
 
         print $fpo $line . "\n";
@@ -233,9 +263,9 @@ print $theme->detail() . "\n\n";
 # Collect all file edits across units
 my %edits;
 
-foreach my $file ( keys %{ $mod_info{files} } ) {
+foreach my $file ( keys %{ $unit_info{files} } ) {
     push @{ $edits{$file} },
-      [ $mod_info{name}, $mod_info{files}{$file}, $saver ];
+      [ $unit_info{name}, $unit_info{files}{$file}, $saver ];
 }
 foreach my $file ( keys %{ $theme_info{files} } ) {
     push @{ $edits{$file} },
@@ -249,12 +279,12 @@ foreach my $file ( keys %edits ) {
 }
 
 # trigger calls for any extra file processing
-foreach my $file ( keys %{ $mod_info{files_custom} } ) {
+foreach my $file ( keys %{ $unit_info{files_custom} } ) {
     print "CUSTOM EDIT($file)...\n";
 
     # call backup
     my ( $workfile, $bkupfile ) = make_backup( $file, $tmppath );
-    $mod_info{files_custom}{$file}->( $saver, $bkupfile, $workfile );
+    $unit_info{files_custom}{$file}->( $saver, $bkupfile, $workfile );
 }
 
 ######################################
@@ -383,9 +413,9 @@ eval {
     # Compose tweet.
     my $post =
         "Name: "
-      . $mod_info{fullname}
+      . $unit_info{fullname}
       . "\nAuthor: "
-      . $mod_info{author}
+      . $unit_info{author}
       . "\nSettings: "
       . $detail;
 
