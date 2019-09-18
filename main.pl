@@ -18,21 +18,6 @@ use Scalar::Util 'blessed';
 use Module::Load;
 
 ##############################################################################
-# CONFIG
-##############################################################################
-my $dbpath  = '/home/user/.dosbox';    # Path to your DOSBox local folder
-my $tmppath = '/tmp/dosbox';           # Temp location for all staging
-my $cfgname = 'dosbox-0.74-3.conf';
-
-# Application login info for posting to Twitter
-my %twitter_auth_info = (
-    consumer_key    => '',
-    consumer_secret => '',
-    access_token    => '',
-    access_token_secret => '',
-);
-
-##############################################################################
 # HELPERS
 ##############################################################################
 # Unzip a file to a directory
@@ -152,6 +137,13 @@ sub edit {
 print "WIN31 SCREENSAVERS BOT\n";
 
 ######################################
+# Go read the config file
+my %config = do "$RealBin/config.pl"
+  or die "Couldn't read config.pl: $! $@";
+
+my $tmppath = $config{tmppath};
+
+######################################
 # Get all screensaver objects in one place
 print "Loading screensaver units...\n";
 
@@ -218,9 +210,10 @@ print $theme->detail() . "\n\n";
 ######################################
 # mess with dosbox conf
 {
-    open( my $fpo, '>', "$dbpath/$cfgname" )
-      or die "failed opening $dbpath/$cfgname: $!";
-    open( my $fpi, '<', $cfgname ) or die "failed opening $cfgname: $!";
+    open( my $fpo, '>', "$config{dbpath}/$config{cfgname}" )
+      or die "failed opening $config{dbpath}/$config{cfgname}: $!";
+    open( my $fpi, '<', $config{cfgname} )
+      or die "failed opening $config{cfgname}: $!";
 
     # trigger edit methods
     while ( my $line = <$fpi> ) {
@@ -307,8 +300,11 @@ print "Posting on Twitter...\n";
 
 ## NOTE: you must supply valid credentials here for application access
 my $client = Twitter::API->new_with_traits(
-    traits => qw( NormalizeBooleans DecodeHtmlEntities RetryOnError ),
-    %twitter_auth_info
+    traits          => qw( NormalizeBooleans DecodeHtmlEntities RetryOnError ),
+    consumer_key    => $config{consumer_key},
+    consumer_secret => $config{consumer_secret},
+    access_token    => $config{access_token},
+    access_token_secret => $config{access_token_secret},
 );
 
 eval {

@@ -33,3 +33,7 @@ inc/
 /MANIFEST.bak
 /pm_to_blib
 /*.zip
+
+config.pl
+dosbox
+dosbox-0.74-3
