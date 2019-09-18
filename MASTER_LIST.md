@@ -9,6 +9,26 @@ The following screensavers are currently in rotation:
     * Starfield Simulation
     * Flying Windows
 * [Flying Fonts](https://winworldpc.com/product/true-type-font-packs/20)
+* IdleWild ([Microsoft Entertainment Pack 1, 2, and 3](https://winworldpc.com/product/microsoft-entertainm/1))
+    * Boat Race
+    * Bricks
+    * Chomp
+    * Dancing Lines
+    * Divide & Conquer
+    * Dropout
+    * Fade Away
+    * Fireworks
+    * IconBownz!
+    * Life
+    * Mandelbrot
+    * Oriental Rug
+    * Shuffle
+    * Spider Web
+    * Spotlights
+    * Stars
+    * Stretch
+    * Tinfoil
+    * Trails
 * [Johnny Castaway (Screen Antics)](https://en.wikipedia.org/wiki/Johnny_Castaway)
 * [Magic ScreenSaver](https://winworldpc.com/product/after-dark/1x)
 * [After Dark 1.0](https://winworldpc.com/product/after-dark/10-for-win)
