@@ -29,7 +29,7 @@ sub deploy {
       or die "Cannot open $file: $UnzipError";
 
     my $status;
-    while ( ( $status = $u->nextStream() ) > 0 ) {
+    do {
         my $header = $u->getHeaderInfo();
 
         #print " . " . $header->{Name} . "...\n";
@@ -40,22 +40,24 @@ sub deploy {
             make_path($destdir) or die "Couldn't mkdir $destdir: $!";
         }
 
-        next unless $name;
+        if ($name) {
+            my $destfile = File::Spec->catfile( $dest, $path, $name );
 
-        my $destfile = File::Spec->catfile( $dest, $path, $name );
+            # TODO: There are a few places in here where unzip return values
+            #  are not being checked, e.g. after "read"
+            my $buff;
+            open( my $fpo, '>:raw', "$destfile" )
+              or die "failed opening $destfile: $!";
+            while ( $u->read($buff) ) {
+                print $fpo $buff;
+            }
+            close $fpo;
 
-        my $buff;
-        open( my $fpo, '>:raw', "$destfile" )
-          or die "failed opening $destfile: $!";
-        while ( $u->read($buff) ) {
-            print $fpo $buff;
+            my $stored_time = $header->{Time};
+            utime( $stored_time, $stored_time, $destfile )
+              or die "Couldn't touch $destfile: $!";
         }
-        close $fpo;
-
-        my $stored_time = $header->{Time};
-        utime( $stored_time, $stored_time, $destfile )
-          or die "Couldn't touch $destfile: $!";
-    }
+    } while ( ( $status = $u->nextStream() ) > 0 );
 
     if ( $status < 0 ) {
         die "Unspecified unzip error: $UnzipError";
