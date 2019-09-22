@@ -68,3 +68,7 @@ The following screensavers are currently in rotation:
     * Wrap Around
     * Zot!
 * [iSaver (Intel Demo)](https://winworldpc.com/product/intel-demos/10)
+* [Microsoft Scenes 1.0](https://winworldpc.com/product/microsoft-scenes/10)
+    * Impressionist Art Collection
+    * Outer Space
+    * Sierra Club Nature Collection
