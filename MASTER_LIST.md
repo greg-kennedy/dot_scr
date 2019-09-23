@@ -72,3 +72,12 @@ The following screensavers are currently in rotation:
     * Impressionist Art Collection
     * Outer Space
     * Sierra Club Nature Collection
+* [Microsoft Scenes 2.0](https://winworldpc.com/product/microsoft-scenes/20)
+    * Brain Twister
+    * Flight
+    * Hollywood
+    * Sierra Club Nature
+    * Sierra Club Wildlife
+    * Sports Extremes
+    * Stereogram
+    * Undersea
