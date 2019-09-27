@@ -91,3 +91,8 @@ The following screensavers are currently in rotation:
     * Lines-O-Plenty
     * Rip-It
     * Splotches
+* [Talking Icons](https://winworldpc.com/product/talking-icons/20)
+    * El Capitan
+    * Lake
+    * Snow
+    * Waterfall
