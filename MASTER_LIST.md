@@ -29,6 +29,7 @@ The following screensavers are currently in rotation:
     * Stretch
     * Tinfoil
     * Trails
+    * ~~Wipe Out~~
 * [Johnny Castaway (Screen Antics)](https://en.wikipedia.org/wiki/Johnny_Castaway)
 * [Magic ScreenSaver](https://winworldpc.com/product/after-dark/1x)
 * [After Dark 1.0](https://winworldpc.com/product/after-dark/10-for-win)
@@ -36,7 +37,7 @@ The following screensavers are currently in rotation:
     * Can of Worms
     * Clocks
     * Down the Drain
-    * Fade Away
+    * ~~Fade Away~~
     * Flying Toasters
     * GeoBounce
     * Globe
@@ -76,8 +77,17 @@ The following screensavers are currently in rotation:
     * Brain Twister
     * Flight
     * Hollywood
-    * Sierra Club Nature
+    * ~~Sierra Club Nature~~
     * Sierra Club Wildlife
     * Sports Extremes
     * Stereogram
     * Undersea
+* [Icon Hear-It](https://winworldpc.com/product/icon-hear-it/10)
+    * Bubbles
+    * Bullet Holes
+    * ~~Dim the Screen~~
+    * Float the Screen
+    * Float a Bitmap
+    * Lines-O-Plenty
+    * Rip-It
+    * Splotches
