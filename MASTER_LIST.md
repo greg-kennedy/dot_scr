@@ -54,6 +54,7 @@ The following screensavers are currently in rotation:
     * Punch Out
     * Puzzle
     * Rain Storm
+    * ~~Randomizer~~
     * Rose
     * Satori
     * Shapes
@@ -64,6 +65,56 @@ The following screensavers are currently in rotation:
     * Stained Glass
     * Starry Night
     * String Theory
+    * Vertigo
+    * Warp!
+    * Wrap Around
+    * Zot!
+* [After Dark 2.0c](https://winworldpc.com/product/after-dark/2x)
+    * Aquatic Realm
+    * Can of Worms
+    * Clocks
+    * Down the Drain
+    * ~~Fade Away~~
+    * Flying Toasters
+    * GeoBounce
+    * Globe
+    * GraphStat
+    * Gravity
+    * Hall of Mirrors
+    * Hard Rain
+    * Lasers
+    * Logo
+    * Magic
+    * Marbles
+    * Messages
+    * Mondrian
+    * Mountains
+    * MultiModules
+        * Creepy Night
+        * Kaleidoscope
+        * MultiModule
+        * Planetside
+        * Psychomotor
+        * Space Toasters
+        * Times Up
+    * Nocturnes
+    * Penrose
+    * Punch Out
+    * Puzzle
+    * Rain Storm
+    * ~~Randomizer~~
+    * Rose
+    * Satori
+    * Shapes
+    * ~~Slide Show~~
+    * ~~Sounder~~
+    * Spheres
+    * Spiral Gyra
+    * Spotlight
+    * Stained Glass
+    * Starry Night
+    * String Theory
+    * Swan Lake
     * Vertigo
     * Warp!
     * Wrap Around
