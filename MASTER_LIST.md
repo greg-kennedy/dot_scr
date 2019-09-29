@@ -58,7 +58,7 @@ The following screensavers are currently in rotation:
     * Rose
     * Satori
     * Shapes
-    * Slide Show
+    * ~~Slide Show~~
     * Spheres
     * Spiral Gyra
     * Spotlight
@@ -119,6 +119,23 @@ The following screensavers are currently in rotation:
     * Warp!
     * Wrap Around
     * Zot!
+* [After Dark: Disney Collection](https://winworldpc.com/product/after-dark/2x)
+    * 101Dalmatians
+    * Beauty
+    * Captain Hook
+    * Cheshire Cat
+    * Digital Ink
+    * DisneyClocks
+    * Donald Paints
+    * FallingFlower
+    * Goofy
+    * Haunted
+    * Jungle Book
+    * LittleMermaid
+    * MagicKingdom
+    * Pinocchio
+    * Scrooge
+    * The Sorcerer
 * [iSaver (Intel Demo)](https://winworldpc.com/product/intel-demos/10)
 * [Microsoft Scenes 1.0](https://winworldpc.com/product/microsoft-scenes/10)
     * Impressionist Art Collection
