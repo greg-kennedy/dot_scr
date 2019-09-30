@@ -136,7 +136,7 @@ The following screensavers are currently in rotation:
     * Pinocchio
     * Scrooge
     * The Sorcerer
-* [After Dark: Star Trek](https://vetusware.com/download/After%20Dark%20Star%20Trek%20The%20Screen%20Saver)
+* [After Dark: Star Trek: The Screen Saver](https://vetusware.com/download/After%20Dark%20Star%20Trek%20The%20Screen%20Saver)
     * Brain Cells
     * Communications
     * Final Exam
@@ -152,6 +152,7 @@ The following screensavers are currently in rotation:
     * The Mission
     * Tholian Web
     * Tribbles
+* [After Dark: Marvel Comics Screen Posters](https://archive.org/details/afterdarkmarvelscreenposters)
 * [iSaver (Intel Demo)](https://winworldpc.com/product/intel-demos/10)
 * [Microsoft Scenes 1.0](https://winworldpc.com/product/microsoft-scenes/10)
     * Impressionist Art Collection
