@@ -136,6 +136,22 @@ The following screensavers are currently in rotation:
     * Pinocchio
     * Scrooge
     * The Sorcerer
+* [After Dark: Star Trek](https://vetusware.com/download/After%20Dark%20Star%20Trek%20The%20Screen%20Saver)
+    * Brain Cells
+    * Communications
+    * Final Exam
+    * Final Frontier
+    * Horta
+    * Ion Storm
+    * PlanetaryAtlas
+    * Scotty's Files
+    * Ship Panels
+    * Sickbay
+    * Space
+    * Spock
+    * The Mission
+    * Tholian Web
+    * Tribbles
 * [iSaver (Intel Demo)](https://winworldpc.com/product/intel-demos/10)
 * [Microsoft Scenes 1.0](https://winworldpc.com/product/microsoft-scenes/10)
     * Impressionist Art Collection
