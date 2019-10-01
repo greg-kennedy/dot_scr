@@ -181,3 +181,19 @@ The following screensavers are currently in rotation:
     * Lake
     * Snow
     * Waterfall
+* [Claris Clear Choice: Imaginaria](https://archive.org/details/imaginaria_screensaver_de)
+    * Die Firma (The Associates)
+    * Noten-Chaos (ATM Gone Mad)
+    * Speicherspuk (Attic Antics)
+    * Chemie (Chem Lab)
+    * Korallen (Coral Reef)
+    * Dinosauria (Dinosauria)
+    * Galaxy Tour (Galaxy Tour)
+    * Am  Leuchtturm (Lighthouse (?))
+    * Hafenszene (Monterey Bay)
+    * Mondscheinsonate (Moonlight Sonata)
+    * Regenwald (Rainforest (?))
+    * Omars  Detektei (Swamio Investments)
+    * Terrarium (Terrarium)
+    * Spielkameraden (Young Associates)
+    * Yosemite (Yosemite)
