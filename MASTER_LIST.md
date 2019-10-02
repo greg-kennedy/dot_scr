@@ -197,3 +197,8 @@ The following screensavers are currently in rotation:
     * Terrarium (Terrarium)
     * Spielkameraden (Young Associates)
     * Yosemite (Yosemite)
+* [DOOM II Screen Saver](https://doomwiki.org/wiki/Doom_II_screen_saver)
+    * Duel
+    * Barrels-o-Fun
+    * Skeet Shoot
+    * Fireworks
