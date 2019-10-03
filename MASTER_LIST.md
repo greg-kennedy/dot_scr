@@ -202,3 +202,33 @@ The following screensavers are currently in rotation:
     * Barrels-o-Fun
     * Skeet Shoot
     * Fireworks
+* [Origin FX](http://www.pixsoriginadventures.co.uk/day-217-origin-fx)
+    * Slide Show
+    * A Daily Quote
+    * Air Show
+    * Armageddon
+    * Asteroid Field
+    * Avalanche
+    * Blaze
+    * Bouquet
+    * Building Blox
+    * Claw And Scratch
+    * Ghost Trax
+    * Guardian
+    * Hypnosis
+    * Magic Spheres
+    * Main Street
+    * Mighty Forest
+    * Pixel Stix
+    * Prism
+    * Psychedelia
+    * Pyroworx
+    * Screen Writer
+    * Silhouette
+    * Stratosphere
+    * T.C.S. Paradigm
+    * Ultimate Menagerie
+    * Window Washer
+    * Wing Commander II (with add'l game videos)
+    * Ultima VII: Serpent Isle (module from game)
+    * Strike Commander (module from game)
