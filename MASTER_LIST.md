@@ -232,3 +232,4 @@ The following screensavers are currently in rotation:
     * Wing Commander II (with add'l game videos)
     * Ultima VII: Serpent Isle (module from game)
     * Strike Commander (module from game)
+* [Chutes](http://www.strangesoftware.com/chutes)
