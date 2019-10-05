@@ -285,3 +285,11 @@ The following screensavers are currently in rotation:
     * Tunnel
     * Wriggly
 * [Chutes](http://www.strangesoftware.com/chutes)
+* [Energizer Bunny Screen Saver](https://archive.org/details/energizer_bunny_screen_saver)
+    * Watery World
+    * E.B. in the Old West
+    * Parachuting
+    * Parachuting (small)
+    * E.B. on Parade
+    * E.B. on Parade (small)
+    * Lasers
