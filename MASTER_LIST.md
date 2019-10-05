@@ -232,4 +232,56 @@ The following screensavers are currently in rotation:
     * Wing Commander II (with add'l game videos)
     * Ultima VII: Serpent Isle (module from game)
     * Strike Commander (module from game)
+* [Intermission 4.0](https://archive.org/details/intermission4.0)
+    * Acid Spray
+    * Ant Mine
+    * Battling Mixers
+    * Bigfoot
+    * Bitmap Saver
+    * Bricks
+    * Chaos
+    * Clowns
+    * Communique
+    * Conundrum
+    * Cowboy Singer
+    * Crystal Palettes
+    * Dancing Pig
+    * Dissolve
+    * Dragon Kites
+    * Einstein
+    * Eyes
+    * Ferns
+    * Firefly
+    * Fireworks
+    * Flashlight
+    * Flex
+    * Flow
+    * Flying
+    * Golfing Ants
+    * Ice Crystals
+    * Kaleidoscope
+    * Marine
+    * Maze
+    * Melting Screen
+    * Moire A
+    * Moire B
+    * Mosaic
+    * Orbs
+    * Paradise
+    * Photo Shoot
+    * Picture Show
+    * Ping
+    * Plants
+    * Polar Caps
+    * Rapping Pig
+    * Snooze
+    * Snow Flakes
+    * Sorcery
+    * Spirals
+    * Swarm
+    * Swirl
+    * The Machine (Palette)
+    * Timepiece
+    * Tunnel
+    * Wriggly
 * [Chutes](http://www.strangesoftware.com/chutes)
