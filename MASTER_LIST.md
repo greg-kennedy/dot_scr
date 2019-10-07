@@ -293,3 +293,18 @@ The following screensavers are currently in rotation:
     * E.B. on Parade
     * E.B. on Parade (small)
     * Lasers
+* [Star Wars Screen Entertainment](https://starwars.fandom.com/wiki/Star_Wars_Screen_Entertainment)
+    * Blueprints
+    * Cantina
+    * Character Biographies
+    * Darth Vader
+    * Death Star Trench
+    * Hyperspace
+    * Imperial Clock
+    * Jawas
+    * Lightsaber Duel
+    * Poster Art
+    * Rebel Clock
+    * Scrolling Text
+    * Space Battles
+    * Storyboards
