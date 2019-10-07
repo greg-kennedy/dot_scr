@@ -9,11 +9,13 @@ sub _pick { return $_[ rand @_ ]; }
 # The other annoying thing is that ChangeDelay must be a multiple of 60
 
 # list of sets with number of images in each
+# Sierra Club is duplicated in MS Scenes 2.0 "Nature"
+#  (with slightly higher resolution)
 my %picsets = (
     'Brain Twister' => 40,
     'Flight' => 40,
     'Hollywood' => 40,
-    'Sierra Club Nature' => 48,
+#    'Sierra Club Nature' => 48,
     'Sierra Club Wildlife' => 40,
     'Sports Extremes' => 40,
     'Stereogram' => 40,
@@ -38,7 +40,7 @@ sub info {
             #            cycles => 0
         },
 
-        weight => 8,
+        weight => scalar keys %picsets,
     );
 }
 

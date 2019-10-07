@@ -25,7 +25,7 @@ my %controls = (
         [ 'Drops',      1 ],
         [ 'Show Drain', 1 ],
     ],
-    'Fade Away'       => [ [ 'Style',          6 ], ],
+    #'Fade Away'       => [ [ 'Style',          6 ], ],
     'Flying Toasters' => [ [ 'Flying Objects', 100 ], [ 'Toast', 100 ], ],
     'GeoBounce' =>
       [ [ 'Shape', 4 ], [ 'Size', 100 ], [ 'Speed', 100 ], [ 'Faces', 2 ], ],
@@ -89,7 +89,7 @@ my %controls = (
         [ 'Knots',       100 ],
     ],
     'Shapes'     => [ [ 'Clear Screen First', 1 ],   [ 'Color',      1 ], ],
-    'Slide Show' => [ [ 'Display Time',       100 ], [ 'Fade Speed', 100 ], ],
+    #'Slide Show' => [ [ 'Display Time',       100 ], [ 'Fade Speed', 100 ], ],
     'Spheres'    => [
         [ 'Max Size',           100 ],
         [ 'Offset',             100 ],
@@ -164,8 +164,11 @@ sub new {
     until ( eof $fpi ) {
         read $fpi, my $buf, 49;
         my ( $filename, $realname ) = unpack 'Z[13]Z[20]x[16]', $buf;
-        next if $realname eq 'Randomizer';
-        $modules{$realname} = $filename;
+        if ( exists $controls{$realname} ) {
+          $modules{$realname} = $filename;
+        } else {
+          print "Skipping unknown module $realname\n";
+        }
     }
 
     # Pick da winna
@@ -200,7 +203,7 @@ sub new {
         module_file  => $modules{$module},
         settings     => $cfg_str,
         settings_bin => $cfg,
-	sound        => $sound,
+        sound        => $sound,
     };
 
     return bless( $self, $class );

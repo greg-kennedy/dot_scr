@@ -4,6 +4,16 @@ use warnings;
 
 sub _pick { return $_[ rand @_ ]; }
 
+# Microsoft Scenes 1.0
+
+# list of sets with number of images in each
+
+my %picsets = (
+    'Impressionists' => 48,
+    'Sierra Club' => 48,
+    'Outer Space' => 48,
+);
+
 # Info routine: return basic details about this module
 sub info {
     return (
@@ -22,7 +32,7 @@ sub info {
             #            cycles => 0
         },
 
-        weight => 3,
+        weight => scalar keys %picsets,
     );
 }
 
@@ -32,9 +42,11 @@ sub new {
     my $class    = shift;
     my $basepath = shift;
 
+    my $picset = _pick(keys %picsets);
+
     my $self = {
-        picset => _pick('Impressionists', 'Sierra Club', 'Outer Space'),
-        picstart   => int( rand(48) ) + 1,
+        picset => $picset,
+        picstart   => int( rand($picsets{$picset}) ) + 1,
 
         #        sound => 0,
     };

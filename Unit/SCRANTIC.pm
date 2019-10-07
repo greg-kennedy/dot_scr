@@ -79,19 +79,19 @@ sub append_scranticini {
 
     if ( !defined $line ) {
         $line = <<"EOF";
-  [ScreenSaver.ScreenAntics]
-  SourceDir=C:\\SIERRA\\SCRANTIC
-  Background=1
-  Clouds=1
-  Waves=1
-  Sounds=1
-  NumDays=$self->{day}
-  Introduction=$self->{day}
-  CurrentYear=$self->{current_year}
-  CurrentMonth=$self->{current_month}
-  CurrentDay=$self->{current_day}
-  StartTime=800
-  Password=
+[ScreenSaver.ScreenAntics]
+SourceDir=C:\\SIERRA\\SCRANTIC
+Background=1
+Clouds=1
+Waves=1
+Sounds=1
+NumDays=$self->{day}
+Introduction=$self->{day}
+CurrentYear=$self->{current_year}
+CurrentMonth=$self->{current_month}
+CurrentDay=$self->{current_day}
+StartTime=800
+Password=
 EOF
     }
     return $line;

@@ -130,11 +130,11 @@ sub new {
     until ( eof $fpi ) {
         read $fpi, my $buf, 49;
         my ( $filename, $realname ) = unpack 'Z[13]Z[20]x[16]', $buf;
-	if ( exists $controls{$realname} ) {
+        if ( exists $controls{$realname} ) {
           $modules{$realname} = $filename;
-	} else {
+        } else {
           print "Skipping unknown module $realname\n";
-	}
+        }
     }
 
     # Pick da winna
@@ -163,7 +163,7 @@ sub new {
         module_file  => $modules{$module},
         settings     => $cfg_str,
         settings_bin => $cfg,
-	sound        => ($module eq '  Ion Storm' ? undef : 1),
+        sound        => ($module eq ' Ion Storm' ? undef : 1),
     };
 
     return bless( $self, $class );

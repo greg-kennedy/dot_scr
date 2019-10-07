@@ -15,7 +15,7 @@ my %modules = (
       'filename' => 'ELCAP',
       'cfg' => [
         undef,
-	[ 'Animal speed' => [0 .. 100] ],
+        [ 'Animal speed' => [0 .. 100] ],
       ]
      },
     'Lake' => {
@@ -23,22 +23,22 @@ my %modules = (
       'cfg' => [
         [ 'Ducks' => [0 .. 5] ],
         [ 'Sound' => 1 ],
-	[ 'Weather' => [0 .. 100] ],
-	[ 'Wind' => [0 .. 100] ],
+        [ 'Weather' => [0 .. 100] ],
+        [ 'Wind' => [0 .. 100] ],
       ],
     },
     'Snow' => {
       'filename' => 'SNOW',
       'cfg' => [
-	[ 'Snowfall' => [0 .. 100] ],
-	[ 'Wind' => [0 .. 100] ],
+        [ 'Snowfall' => [0 .. 100] ],
+        [ 'Wind' => [0 .. 100] ],
       ]
     },
     'Waterfall' => {
       'filename' => 'WFALL',
       'cfg' => [
-	[ 'Junk in Water' => [0 .. 10] ],
-	[ 'Water Speed' => [0 .. 100] ],
+        [ 'Junk in Water' => [0 .. 10] ],
+        [ 'Water Speed' => [0 .. 100] ],
       ],
     },
 );
@@ -77,28 +77,28 @@ sub new {
         module      => $module,
         filename    => $modules{$module}{filename},
         description => 'Module: ' . $module,
-	config      => '',
+        config      => '',
     };
 
     # Set config options
     for (my $i = 0; $i < 4; $i ++)
     {
         my $setting = $modules{$module}{cfg}[$i];
-	if ($setting) {
+        if ($setting) {
             if ($setting->[0] eq 'Sound') {
               # sound enabled for this module
               $self->{sound} = 1;
-	      $self->{config} .= "Ctl$i=1\n";
+              $self->{config} .= "Ctl$i=1\n";
             } else {
-	      # It's an array
-	      my $value = _pick( @{$setting->[1]} );
+              # It's an array
+              my $value = _pick( @{$setting->[1]} );
 
-	      $self->{description} .= ", $setting->[0] $value";
-	      $self->{config} .= "Ctl$i=$value\n";
+              $self->{description} .= ", $setting->[0] $value";
+              $self->{config} .= "Ctl$i=$value\n";
             }
         } else {
-	  $self->{config} .= "Ctl$i=1\n";
-	}
+          $self->{config} .= "Ctl$i=1\n";
+        }
     }
 
     $self->{config} .= 'WakeUp=1';
@@ -131,7 +131,7 @@ sub edit_winini {
     if (defined $line) {
         if ( $line =~ m/^ScreenSaveActive=/i ) {
             $line = "ScreenSaveActive=1";
-	}
+        }
     } else {
         $line = "[Aristosoft]\nTICON=C:\\TICON";
     }

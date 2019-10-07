@@ -89,7 +89,7 @@ sub new {
         module      => $module,
         filename    => $modules{$module}{filename},
         description => 'Module: ' . $module,
-	config      => '',
+        config      => '',
     };
 
     # Set config options
@@ -99,13 +99,13 @@ sub new {
             if ($setting eq 'Sound') {
               # sound enabled for this module
               $self->{sound} = 1;
-	      $self->{config} .= "Sound=1\n";
+              $self->{config} .= "Sound=1\n";
             } elsif ($setting eq 'Bitmap') {
               # choose a random bitmap from Windows folder
               opendir( my $dh, $basepath . '/WINDOWS' );
               my @files = readdir($dh);
               closedir($dh);
-                    
+
               my @bmps;
               foreach my $file (@files) {
                   if ( $file =~ m/^.+\.bmp$/i ) {
@@ -115,14 +115,14 @@ sub new {
 
               # Pick today's winner
               my $bmp = _pick(@bmps);
-	      $self->{config} .= "Bitmap=C:\\WINDOWS\\$bmp.BMP\n";
-	      $self->{description} .= ", bitmap \"$bmp\"";
+              $self->{config} .= "Bitmap=C:\\WINDOWS\\$bmp.BMP\n";
+              $self->{description} .= ", bitmap \"$bmp\"";
             } else {
-	      # It's an array
-	      my $value = _pick( @{$modules{$module}{cfg}{$setting}} );
+              # It's an array
+              my $value = _pick( @{$modules{$module}{cfg}{$setting}} );
 
-	      $self->{config} .= "$setting=$value\n";
-	      $self->{description} .= ", $setting $value";
+              $self->{config} .= "$setting=$value\n";
+              $self->{description} .= ", $setting $value";
             }
         }
     }

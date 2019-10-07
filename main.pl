@@ -170,13 +170,14 @@ if ( @ARGV == 1 ) {
     foreach my $file (@files) {
         if ( $file =~ m/^(.+)\.pm$/ ) {
             my $mod_name = 'Unit::' . $1;
-            print " . $mod_name\n";
 
             # Load the module and extract info.
             #  If weight is not defined, default to 1.
             load $mod_name;
             my %mod_info = $mod_name->info();
             $mod_info{weight} ||= 1;
+
+            print " . $mod_name (weight: $mod_info{weight})\n";
 
             # Store the info in a hash, and keep a
             #  running count of the total weights
@@ -312,7 +313,7 @@ print
   "target video_bitrrate=$video_bitrate k, audio_bitrate=$audio_bitrate k\n";
 
 my $video_line =
-    '-c:v libx264 -pix_fmt yuv420p -b:v '
+    '-c:v libx264 -preset veryfast -pix_fmt yuv420p -b:v '
   . $video_bitrate
   . 'k -filter:v scale=iw*2:ih*2:flags=neighbor+full_chroma_inp+full_chroma_int+accurate_rnd';
 my $audio_line =
@@ -407,6 +408,7 @@ eval {
     }
 
     if ( $r->{processing_info}{state} ne 'succeeded' ) {
+        use Data::Dumper;
         die "Upload failed: " . Dumper($r);
     }
 

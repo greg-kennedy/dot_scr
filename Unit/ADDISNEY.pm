@@ -67,7 +67,7 @@ my %controls = (
     ],
     '  Scrooge' => [
         [ 'Money'      => 100 ],
-	[ 'Type'       => 2 ],
+        [ 'Type'       => 2 ],
     ],
     '  The Sorcerer' => [
         [ 'Brooms'      => 100 ],
@@ -123,11 +123,11 @@ sub new {
     until ( eof $fpi ) {
         read $fpi, my $buf, 49;
         my ( $filename, $realname ) = unpack 'Z[13]Z[20]x[16]', $buf;
-	if ( exists $controls{$realname} ) {
+        if ( exists $controls{$realname} ) {
           $modules{$realname} = $filename;
-	} else {
+        } else {
           print "Skipping unknown module $realname\n";
-	}
+        }
     }
 
     # Pick da winna
@@ -142,10 +142,10 @@ sub new {
         my $value;
         my $knob = $controls{$module}[$i];
         if ( defined $knob ) {
-	    if ($knob->[0] eq 'Music') {
-	        # always play music
-		$value = 100;
-	    } else {
+            if ($knob->[0] eq 'Music') {
+                # always play music
+                $value = 100;
+            } else {
                 $value = int( rand( $knob->[1] + 1 ) );
                 $cfg_str .=
                   ", $knob->[0]: $value" . ( $knob->[1] == 100 ? '%' : '' );
@@ -161,7 +161,7 @@ sub new {
         module_file  => $modules{$module},
         settings     => $cfg_str,
         settings_bin => $cfg,
-	sound        => 1,
+        sound        => 1,
     };
 
     return bless( $self, $class );

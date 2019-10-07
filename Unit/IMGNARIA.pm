@@ -107,7 +107,7 @@ sub edit_imgnaria {
             $line = "Modul=" . $self->{module};
         } else {
             delete $self->{schoner};
-	}
+        }
     }
 
     return $line;
