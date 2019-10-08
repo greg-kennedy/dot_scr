@@ -55,11 +55,6 @@ sub info {
             'WINDOWS/WIN.INI'     => \&edit_winini,
             'WINDOWS/CONTROL.INI' => \&append_controlini,
         },
-        dosbox => {
-            start => 8000,
-
-            #            cycles => 0,
-        },
 
         weight => scalar keys %modules,
     );
@@ -78,6 +73,11 @@ sub new {
         filename    => $modules{$module}{filename},
         description => 'Module: ' . $module,
         config      => '',
+        dosbox => {
+            start => 8000,
+
+            #            cycles => 0,
+        },
     };
 
     # Set config options

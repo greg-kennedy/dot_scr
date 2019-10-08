@@ -37,11 +37,6 @@ sub info {
             'WINDOWS/WIN.INI'  => \&edit_winini,
             'IMGNARIA/IMGNARIA.INI'     => \&edit_imgnaria,
         },
-        dosbox => {
-            start => 8000,
-
-            #            cycles => 0
-        },
 
         weight => scalar keys %modules,
     );
@@ -56,6 +51,11 @@ sub new {
     my $self = {
         module => _pick(keys %modules),
         sound => 1,
+        dosbox => {
+            start => 8000,
+
+            #            cycles => 0
+        },
     };
 
     return bless( $self, $class );

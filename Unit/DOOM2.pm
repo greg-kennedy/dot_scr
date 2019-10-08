@@ -25,10 +25,6 @@ sub info {
             'WINDOWS/WIN.INI'      => \&edit_winini,
             'WINDOWS/ENTERACT.INI' => \&edit_enteract,
         },
-        dosbox => {
-            start => 12000,
-            cycles => 10000
-        },
 
         weight => scalar @modules,
     );
@@ -93,6 +89,10 @@ sub new {
         message  => $message_enable,
 
         sound => 1,
+        dosbox => {
+            start => 12000,
+            cycles => 10000
+        },
     };
 
     return bless( $self, $class );

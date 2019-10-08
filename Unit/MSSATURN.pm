@@ -15,9 +15,6 @@ sub info {
             'WINDOWS/SYSTEM.INI'  => \&edit_systemini,
             'WINDOWS/WIN.INI'     => \&edit_winini,
         },
-        dosbox => {
-            start => 8000,
-        },
     );
 }
 
@@ -27,7 +24,11 @@ sub new {
     my $class    = shift;
     my $basepath = shift;
 
-    my $self = {};
+    my $self = {
+        dosbox => {
+            start => 8000,
+        },
+    };
 
     return bless( $self, $class );
 }

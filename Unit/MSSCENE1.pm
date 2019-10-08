@@ -26,11 +26,6 @@ sub info {
             'WINDOWS/WIN.INI'  => \&edit_winini,
             'WINDOWS/SCENES.INI'     => \&edit_scenesini,
         },
-        dosbox => {
-            start => 8000,
-
-            #            cycles => 0
-        },
 
         weight => scalar keys %picsets,
     );
@@ -47,6 +42,11 @@ sub new {
     my $self = {
         picset => $picset,
         picstart   => int( rand($picsets{$picset}) ) + 1,
+        dosbox => {
+            start => 8000,
+
+            #            cycles => 0
+        },
 
         #        sound => 0,
     };

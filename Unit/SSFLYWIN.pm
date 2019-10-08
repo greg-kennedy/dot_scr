@@ -14,11 +14,6 @@ sub info {
             'WINDOWS/WIN.INI'     => \&edit_winini,
             'WINDOWS/CONTROL.INI' => \&append_controlini,
         },
-        dosbox => {
-            start => 8000,
-
-            #            cycles => 0
-        },
 
         #        weight => 1,
     );
@@ -35,6 +30,11 @@ sub new {
         speed   => int( rand(11) ),
 
         #        sound => 0,
+        dosbox => {
+            start => 8000,
+
+            #            cycles => 0
+        },
     };
 
     return bless( $self, $class );

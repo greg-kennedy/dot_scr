@@ -16,9 +16,6 @@ sub info {
             'WINDOWS/WIN.INI'      => \&edit_winini,
             'WINDOWS/ORIGINFX.INI' => \&edit_originfxini,
         },
-        dosbox => {
-            start => 63000,
-        },
         weight => 1
     );
 }
@@ -27,7 +24,13 @@ sub new {
     my $class    = shift;
     my $basepath = shift;
 
-    return bless( {}, $class );
+    my $self = {
+        dosbox => {
+            start => 63000,
+        },
+    };
+
+    return bless( $self, $class );
 }
 
 sub detail {

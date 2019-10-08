@@ -110,10 +110,6 @@ sub info {
         files_custom => {
             'WINDOWS/ADMODULE.ADS' => \&extra_admodule,
         },
-        dosbox => {
-            start  => 71000,
-            cycles => 5000,
-        },
         weight => scalar keys %controls,
     );
 }
@@ -164,6 +160,10 @@ sub new {
         settings     => $cfg_str,
         settings_bin => $cfg,
         sound        => ($module eq ' Ion Storm' ? undef : 1),
+        dosbox => {
+            start  => 71000,
+            cycles => 5000,
+        },
     };
 
     return bless( $self, $class );

@@ -181,9 +181,6 @@ sub info {
         files_custom => {
             'ORIGINFX/ORIGINFX.DAT' => \&extra_originfxdat,
         },
-        dosbox => {
-            start => 63000,
-        },
         weight => scalar keys %controls,
     );
 }
@@ -238,6 +235,9 @@ sub new {
         settings     => $cfg_str,
         settings_bin => $cfg,
         sound        => $controls{$module}{sound},
+        dosbox => {
+            start => 63000,
+        },
     };
 
     return bless( $self, $class );

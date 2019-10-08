@@ -253,9 +253,9 @@ print $theme->detail() . "\n\n";
         chomp $line;
 
         if ( $line =~ m/^demostart=/ ) {
-            $line = "demostart=" . $unit_info{dosbox}{start};
-        } elsif ( $unit_info{dosbox}{cycles} && $line =~ m/^cycles=/ ) {
-            $line = "cycles=fixed " . $unit_info{dosbox}{cycles};
+            $line = "demostart=" . $saver->{dosbox}{start};
+        } elsif ( $saver->{dosbox}{cycles} && $line =~ m/^cycles=/ ) {
+            $line = "cycles=fixed " . $saver->{dosbox}{cycles};
         }
 
         print $fpo $line . "\n";

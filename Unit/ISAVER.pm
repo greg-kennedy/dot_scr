@@ -14,11 +14,6 @@ sub info {
         files    => {
             'WINDOWS/WIN.INI' => \&edit_winini,
         },
-        dosbox => {
-            start => 65000,
-
-            #            cycles => 0
-        },
 
         #        weight => 1,
     );
@@ -30,7 +25,11 @@ sub new {
     my $class    = shift;
     my $basepath = shift;
 
-    my $self = {};
+    my $self = {
+        dosbox => {
+            start => 65000,
+        },
+    };
 
     return bless( $self, $class );
 }

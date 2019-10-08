@@ -18,11 +18,6 @@ sub info {
             'WINDOWS/WIN.INI'     => \&edit_winini,
             'WINDOWS/CONTROL.INI' => \&append_controlini,
         },
-        dosbox => {
-            start => 8000,
-
-            #            cycles => 0
-        },
 
         #        weight => 1,
     );
@@ -47,6 +42,11 @@ sub new {
             'lines'  => int( rand(11) ) + 5,
             'start'  => _pick( keys %Unit::Common::Microsoft::ext_palette ),
             'end'    => _pick( keys %Unit::Common::Microsoft::ext_palette ),
+        },
+        dosbox => {
+            start => 8000,
+
+            #            cycles => 0
         },
 
         #        sound => 0,

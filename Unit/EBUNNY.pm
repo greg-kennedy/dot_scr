@@ -35,11 +35,6 @@ sub info {
             'WINDOWS/WIN.INI' => \&edit_winini,
             'WINDOWS/BUNNY.INI' => \&edit_bunnyini,
         },
-        dosbox => {
-            start => 33000,
-
-            #            cycles => 0
-        },
 
         weight => 7,
     );
@@ -70,6 +65,11 @@ sub new {
     my $self = {
         module => $module,
         sound  => $sound,
+        dosbox => {
+            start => 33000,
+
+            #            cycles => 0
+        },
     };
 
     return bless( $self, $class );

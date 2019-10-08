@@ -18,11 +18,6 @@ sub info {
             'WINDOWS/WIN.INI'     => \&edit_winini,
             'WINDOWS/CONTROL.INI' => \&append_controlini,
         },
-        dosbox => {
-            start => 8000,
-
-            #            cycles => 0
-        },
 
         #        weight => 1,
     );
@@ -55,6 +50,11 @@ sub new {
         size      => _pick(@Unit::Common::Microsoft::font_sizes),
         font      => _pick(@Unit::Common::Microsoft::font_faces),
 
+        dosbox => {
+            start => 8000,
+
+            #            cycles => 0
+        },
         #        sound => 0,
     };
 

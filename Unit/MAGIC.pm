@@ -12,10 +12,6 @@ sub info {
         files   => {
             'WINDOWS/WIN.INI' => \&edit_winini,
         },
-        dosbox => {
-            start  => 76000,
-            cycles => 3000,
-        },
 
         #        weight => 1,
     );
@@ -31,7 +27,10 @@ sub new {
         speed  => int( rand(100) ) + 1,
         color  => int( rand(101) ),
 
-        #        sound => 0,
+        dosbox => {
+            start  => 76000,
+            cycles => 3000,
+        },
     };
 
     return bless( $self, $class );

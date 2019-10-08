@@ -144,10 +144,6 @@ sub info {
             'WINDOWS/ADMODULE.ADS' => \&extra_admodule,
             'WINDOWS/MESSAGES.ADS' => \&extra_messages,
         },
-        dosbox => {
-            start  => 76000,
-            cycles => 3000,
-        },
         weight => scalar keys %controls,
     );
 }
@@ -204,6 +200,10 @@ sub new {
         settings     => $cfg_str,
         settings_bin => $cfg,
         sound        => $sound,
+        dosbox => {
+            start  => 76000,
+            cycles => 3000,
+        },
     };
 
     return bless( $self, $class );

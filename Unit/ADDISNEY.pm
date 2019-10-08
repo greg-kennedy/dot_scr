@@ -103,10 +103,6 @@ sub info {
         files_custom => {
             'WINDOWS/ADMODULE.ADS' => \&extra_admodule,
         },
-        dosbox => {
-            start  => 63000,
-            #cycles => 3000,
-        },
         weight => scalar keys %controls,
     );
 }
@@ -162,6 +158,10 @@ sub new {
         settings     => $cfg_str,
         settings_bin => $cfg,
         sound        => 1,
+        dosbox => {
+            start  => 63000,
+            #cycles => 3000,
+        },
     };
 
     return bless( $self, $class );

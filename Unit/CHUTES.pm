@@ -14,9 +14,6 @@ sub info {
             'WINDOWS/WIN.INI'     => \&edit_winini,
             'WINDOWS/CONTROL.INI' => \&append_controlini,
         },
-        dosbox => {
-            start => 8000,
-        },
     );
 }
 
@@ -30,7 +27,10 @@ sub new {
         packer => int(rand(6)),
         passes => int(rand(10)) + 1,
         limit => int(rand(4)),
-        fastoff => int(rand(2))
+        fastoff => int(rand(2)),
+        dosbox => {
+            start => 8000,
+        },
     };
 
     return bless( $self, $class );

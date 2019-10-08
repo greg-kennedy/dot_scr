@@ -14,11 +14,6 @@ sub info {
             'WINDOWS/WIN.INI'      => \&edit_winini,
             'WINDOWS/SCRANTIC.INI' => \&append_scranticini,
         },
-        dosbox => {
-            start => 18000,
-
-            #            cycles => 0,
-        },
 
         #        weight => 1,
     );
@@ -37,7 +32,11 @@ sub new {
         current_day   => $mday,
         day           => int( $now / ( 60 * 60 * 24 ) ) % 11 + 1,
         sound         => 1,
+        dosbox => {
+            start => 18000,
 
+            #            cycles => 0,
+        },
     };
 
     return bless( $self, $class );

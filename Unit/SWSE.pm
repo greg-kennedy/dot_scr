@@ -146,11 +146,6 @@ sub info {
       'WINDOWS/ANTSW.INI'  => \&edit_antswini,
       'WINDOWS/SWSE.INI'   => \&edit_swseini,
     },
-    dosbox => {
-      start => 8000,
-
-      #cycles => 5000
-    },
 
     weight => scalar keys %modules,
   );
@@ -223,6 +218,11 @@ sub new {
     settings    => $cfg,
     description => $cfg_str,
     sound       => 1,
+    dosbox => {
+      start => 8000,
+
+      #cycles => 5000
+    },
   };
 
   return bless( $self, $class );

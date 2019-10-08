@@ -14,11 +14,6 @@ sub info {
             'WINDOWS/WIN.INI'     => \&edit_winini,
             'WINDOWS/CONTROL.INI' => \&append_controlini,
         },
-        dosbox => {
-            start => 8000,
-
-            #            cycles => 0
-        },
 
         #        weight => 1,
     );
@@ -34,6 +29,11 @@ sub new {
         density => int( rand(191) ) + 10,
         speed   => int( rand(11) ),
 
+        dosbox => {
+            start => 8000,
+
+            #            cycles => 0
+        },
         #        sound => 0,
     };
 

@@ -18,10 +18,6 @@ sub info {
             'WINDOWS/WIN.INI'      => \&edit_winini,
             #'WINDOWS/AD_PREFS.INI' => \&edit_adprefsini,
         },
-        dosbox => {
-            start  => 71000,
-            cycles => 5000,
-        },
         weight => 1,
     );
 }
@@ -31,6 +27,10 @@ sub new {
     my $basepath = shift;
 
     my $self = {
+        dosbox => {
+            start  => 71000,
+            cycles => 5000,
+        },
     };
 
     return bless( $self, $class );
