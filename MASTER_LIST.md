@@ -153,6 +153,7 @@ The following screensavers are currently in rotation:
     * Tholian Web
     * Tribbles
 * [After Dark: Marvel Comics Screen Posters](https://archive.org/details/afterdarkmarvelscreenposters)
+* [After Dark: Star Trek Screen Posters](https://archive.org/details/AfterDark_StarTrek_ScreenPosters)
 * [After Dark 3.2](https://winworldpc.com/product/after-dark/3x)
     * Artist
     * Bad Dog!
