@@ -284,7 +284,9 @@ The following screensavers are currently in rotation:
     * Timepiece
     * Tunnel
     * Wriggly
-* [Chutes](http://www.strangesoftware.com/chutes)
+* Strange Software screensavers
+    * [Chutes](http://www.strangesoftware.com/chutes)
+    * [Leaking Roof](http://web.archive.org/web/20051202074123/http://www.strange.co.uk/downarea.htm)
 * [Energizer Bunny Screen Saver](https://archive.org/details/energizer_bunny_screen_saver)
     * Watery World
     * E.B. in the Old West

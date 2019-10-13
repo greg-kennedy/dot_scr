@@ -1,12 +1,12 @@
-package Unit::CHUTES;
+package Unit::LEAKROOF;
 use strict;
 use warnings;
 
 # Info routine: return basic details about this module
 sub info {
     return (
-        name     => 'CHUTES',
-        fullname => 'Chutes',
+        name     => 'LEAKROOF',
+        fullname => 'Leaking Roof',
         author   => 'Strange Software',
         payload  => ['STRANGE.zip'],
         files    => {
@@ -24,10 +24,7 @@ sub new {
     my $basepath = shift;
 
     my $self = {
-        packer => int(rand(6)),
-        passes => int(rand(10)) + 1,
-        limit => int(rand(4)),
-        fastoff => int(rand(2)),
+        strength => int(rand 15) + 1,
         dosbox => {
             start => 8000,
         },
@@ -40,8 +37,7 @@ sub new {
 sub detail {
     my $self = shift;
 
-    my @packer = ('Expert', 'Trainee', 'Summer Help', 'Back from the Pub', 'Saboteur', 'Psychopath');
-    return "Packer: " . $packer[$self->{packer}] . ", Chutes Limit: " . $self->{limit} . ", " . ($self->{fastoff} ? "Skip Takeoff" : "Passes: " . $self->{passes});
+    return "Maximum Droplets: " . $self->{strength};
 }
 
 ##############################################################################
@@ -52,7 +48,7 @@ sub edit_systemini {
     my ( $self, $line ) = @_;
 
     if ( $line && $line =~ m/^SCRNSAVE\.EXE=/i ) {
-        $line = "SCRNSAVE.EXE=C:\\WINDOWS\\CHUTE.SCR";
+        $line = "SCRNSAVE.EXE=C:\\WINDOWS\\LEAK.SCR";
     }
     return $line;
 }
@@ -72,12 +68,8 @@ sub append_controlini {
 
     if ( !defined $line ) {
         $line = <<"EOF";
-[ScreenSaver.Chutes]
-Packer=$self->{packer}
-Passes=$self->{passes}
-Limit=$self->{limit}
-FastOff=$self->{fastoff}
-PWProtected=0
+[ScreenSaver.Leaking roof]
+Strength=$self->{strength}
 EOF
     }
 
