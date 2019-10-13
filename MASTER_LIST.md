@@ -153,6 +153,43 @@ The following screensavers are currently in rotation:
     * Tholian Web
     * Tribbles
 * [After Dark: Marvel Comics Screen Posters](https://archive.org/details/afterdarkmarvelscreenposters)
+* [After Dark 3.2](https://winworldpc.com/product/after-dark/3x)
+    * Artist
+    * Bad Dog!
+    * Bugs
+    * Clocks 3.0
+    * Daredevil Dan
+    * DOS Shell
+    * Draw Morph
+    * Fish Pro
+    * Flying Toasters Pro
+    * Flying Toilets
+    * Frost and Fire
+    * Guts
+    * ~~Logo~~
+    * ~~Messages~~
+    * MultiModules
+        * Apocalypse
+        * Clock Attack
+        * Kiss the Sky
+        * Make Sense
+        * Mind Warp
+    * Nirvana
+    * Nonsense
+    * Photon
+    * ~~Puzzle~~
+    * Rat Race
+    * Ray
+    * Rebound
+    * ~~Rose~~
+    * ~~Satori~~
+    * ~~SlideShow~~
+    * ~~Spheres~~
+    * ~~Spotlight~~
+    * ~~Warp!~~
+    * You Bet Your Head
+    * Zooommm!
+
 * [iSaver (Intel Demo)](https://winworldpc.com/product/intel-demos/10)
 * [Microsoft Scenes 1.0](https://winworldpc.com/product/microsoft-scenes/10)
     * Impressionist Art Collection
