@@ -119,6 +119,33 @@ The following screensavers are currently in rotation:
     * Warp!
     * Wrap Around
     * Zot!
+* [More After Dark](https://archive.org/details/AfterDark_-_MoreAfterDark)
+    * Bogglins
+    * Boris
+    * Bulge
+    * ConfettiFactory
+    * Dominoes
+    * Einstein
+    * Flocks
+    * Fractal Forest
+    * Guts
+    * Hallucinations
+    * ~~Lunatic Fringe~~
+    * Mandelbrot
+    * Meadow
+    * Modern Art
+    * Mosaic
+    * Mowin' Man
+    * Om Appliances
+    * Origami
+    * Pearls
+    * Rain
+    * Say What?
+    * Snake
+    * Spin Brush
+    * Strange Attract
+    * Sunburst
+    * Tunnel
 * [After Dark: Disney Collection](https://winworldpc.com/product/after-dark/2x)
     * 101Dalmatians
     * Beauty
@@ -166,7 +193,7 @@ The following screensavers are currently in rotation:
     * Flying Toasters Pro
     * Flying Toilets
     * Frost and Fire
-    * Guts
+    * ~~Guts~~
     * ~~Logo~~
     * ~~Messages~~
     * MultiModules
@@ -348,3 +375,5 @@ The following screensavers are currently in rotation:
     * Scrolling Text
     * Space Battles
     * Storyboards
+
+

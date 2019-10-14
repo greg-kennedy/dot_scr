@@ -77,7 +77,7 @@ my %controls = (
       cfg =>
         [ [ 'Size' => 100 ], [ 'Palette' => 9 ], [ 'Maximize Speed' => 1 ], ]
     },
-    'Guts' => { cfg => [ [ 'Shapes' => 4 ], [ 'Speed' => 100 ], ] },
+#    'Guts' => { cfg => [ [ 'Shapes' => 4 ], [ 'Speed' => 100 ], ] },
 #    'Logo' => {
 #      # extra cfg hack
 #      cfg => [
