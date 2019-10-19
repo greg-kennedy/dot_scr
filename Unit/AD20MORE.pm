@@ -2,6 +2,8 @@ package Unit::AD20MORE;
 use strict;
 use warnings;
 
+use Unit::Common::AfterDark20;
+
 ##############################################################################
 # giant module settings meanings
 my %controls = (
@@ -50,6 +52,7 @@ my %controls = (
   'Guts' => { cfg => [ [ 'Shapes' => 4 ], [ 'Speed' => 100 ], ] },
   'Hallucinations' =>
     { cfg => [ [ 'Amount' => 100 ], [ 'Clear Screen' => 100 ], ] },
+
 #  'Lunatic Fringe' => {
 #    sound => 1,
 #    cfg   => [ undef, undef, undef, [ 'Starting Level' => 100 ], ]
@@ -110,6 +113,7 @@ my %controls = (
       [ 'Spin'         => 4 ],
     ]
   },
+
 #  'Starry Night' => {
 #    sound => 1,
 #    cfg   => [
@@ -133,17 +137,18 @@ sub _pick { return $_[ rand @_ ] }
 sub info {
   return (
     name     => 'AD20MORE',
-    fullname => 'More After Dark (2.0c)',
+    fullname => 'More After Dark (2.0)',
     author   => 'Berkeley Systems',
-    payload  => ['AD20MORE.zip'],
+    payload  => [ 'ADARK20.zip', 'AD20MORE.zip' ],
     files    => {
-      'WINDOWS/SYSTEM.INI'   => \&edit_systemini,
-      'WINDOWS/WIN.INI'      => \&edit_winini,
+      'WINDOWS/SYSTEM.INI'   => \&Unit::Common::AfterDark20::edit_systemini,
+      'WINDOWS/WIN.INI'      => \&Unit::Common::AfterDark20::edit_winini,
       'WINDOWS/AD_PREFS.INI' => \&edit_adprefsini,
     },
     files_custom => {
       'WINDOWS/ADMODULE.ADS' => \&extra_admodule,
-      'WINDOWS/SAYING.ADS'   => \&extra_sayings,
+
+      #'WINDOWS/SAYING.ADS'   => \&extra_sayings,
     },
     weight => scalar keys %controls,
   );
@@ -154,61 +159,25 @@ sub new {
   my $basepath = shift;
 
   # parse all AD module names
-  my %modules;
-
-  open( my $fpi, '<:raw', "$basepath/WINDOWS/ADMODULE.ADS" )
-    or die "Couldn't open admodule.ads: $!";
-  until ( eof $fpi ) {
-    read $fpi, my $buf, 49;
-    my ( $filename, $realname ) = unpack 'Z[13]Z[20]x[16]', $buf;
-    if ( exists $controls{$realname} ) {
-      $modules{$realname} = $filename;
-    } else {
-      print "Skipping unknown module $realname\n";
-    }
-  }
+  my %modules
+    = Unit::Common::AfterDark20::get_module_names(
+    "$basepath/WINDOWS/ADMODULE.ADS",
+    keys %controls );
 
   # Pick da winna
   my $module = _pick( keys %modules );
 
-  # Configuration only happens for non-MultiModule entries
-  my $cfg     = '';
-  my $cfg_str = '';
-  my $sound;
-
-  if ( !$controls{$module} ) {
-    $cfg_str = " (MultiModule, no settings)";
-    $cfg     = pack( 'v[4]', 0, 0, 0, 0 );
-    $sound   = 1;
-  } else {
-    if ( $controls{$module}{sound} ) {
-      $sound = 1;
-    }
-
-    # Set config options
-    for ( my $i = 0; $i < 4; $i++ ) {
-      my $value;
-      my $knob = $controls{$module}{cfg}[$i];
-      if ( defined $knob ) {
-        $value = int( rand( $knob->[1] + 1 ) );
-        $cfg_str .= ", $knob->[0]: $value" . ( $knob->[1] == 100 ? '%' : '' );
-      } else {
-        $value = 0;
-      }
-      $cfg .= pack( 'v', $value );
-    }
-  }
+  # do configuration
+  my ( $settings, $description, $sound )
+    = Unit::Common::AfterDark20::configure( $controls{$module} );
 
   my $self = {
-    module       => $module,
-    module_file  => $modules{$module},
-    settings     => $cfg_str,
-    settings_bin => $cfg,
-    sound        => $sound,
-    dosbox       => {
-      start  => 23000,
-      cycles => 3000,
-    },
+    module      => $module,
+    module_file => $modules{$module},
+    description => $description,
+    settings    => $settings,
+    sound       => $sound,
+    dosbox      => \%Unit::Common::AfterDark20::dosbox
   };
 
   return bless( $self, $class );
@@ -217,39 +186,7 @@ sub new {
 sub detail {
   my $self = shift;
 
-  return "Module: $self->{module}" . $self->{settings};
-
-#return { settings => "Module: $self->{module}" . $self->{settings}, sound => $self->{sound} };
-}
-
-sub edit_systemini {
-  my ( $self, $line ) = @_;
-
-  # After Dark 2.0 has a 386Enh driver that needs loading.
-  #  Append it immediately after the 386Enh header.
-  if ( defined $line ) {
-    if ( $line =~ m/^\[386Enh\]$/i ) {
-      $line .= "\ndevice=ad.386";
-    } elsif ( $line =~ m/^SCRNSAVE\.EXE=/i ) {
-      $line = "SCRNSAVE.EXE=C:\\WINDOWS\\SSADARK.SCR";
-    }
-  }
-
-  return $line;
-}
-
-sub edit_winini {
-  my ( $self, $line ) = @_;
-
-  if ($line) {
-    if ( $line =~ m/^load=(.*)$/ ) {
-      $line = "load=c:\\afterdrk\\ad.exe c:\\afterdrk\\adinit.exe $1";
-    } elsif ( $line =~ m/^ScreenSaveActive=/i ) {
-      $line = "ScreenSaveActive=1";
-    }
-  }
-
-  return $line;
+  return "Module: $self->{module}" . $self->{description};
 }
 
 sub edit_adprefsini {
@@ -258,7 +195,7 @@ sub edit_adprefsini {
   # AD_PREFS.INI to set up the desired module
   if ($line) {
     if ( $line =~ m/^Module=/i ) {
-      $line = "Module=$self->{module}";
+      $line = "Module=\"$self->{module}\"";
     } elsif ( $line =~ m/^ModuleFile=/i ) {
       $line = "ModuleFile=$self->{module_file}";
     }
@@ -270,34 +207,11 @@ sub edit_adprefsini {
 sub extra_admodule {
   my ( $self, $input, $output ) = @_;
 
-  # ADMODULE.ADS to make settings changes for our picks
-  open( my $fpi, '<:raw', $input )  or die "Couldn't open $input: $!";
-  open( my $fpo, '>:raw', $output ) or die "Can't open $output file: $!";
-  until ( eof $fpi ) {
-    read $fpi, my $buf, 49;
-    my $realname = unpack 'x[13]Z[20]x[16]', $buf;
-    if ( $self->{module} eq $realname ) {
-      substr( $buf, 33, 8 ) = $self->{settings_bin};
-    }
-    print $fpo $buf;
-  }
+  Unit::Common::AfterDark20::set_admodule_ads( $input, $output,
+    $self->{module}, $self->{settings} );
 }
 
-sub extra_sayings {
-  my ( $self, $input, $output ) = @_;
-
-  # If MESSAGES is picked we have more work to do
-  if ( $self->{module} eq 'Messages' ) {
-    my $msgnum = int( rand(8) );
-    open( my $fpi, '<:raw', $input )  or die "Couldn't open $input: $!";
-    open( my $fpo, '>:raw', $output ) or die "Can't open $output file: $!";
-
-    for ( my $i = 0; $i < 8; $i++ ) {
-      read $fpi, my $buf, 246;
-      substr( $buf, 44, 2 ) = pack( 'v', ( $i == $msgnum ) );
-      print $fpo $buf;
-    }
-  }
-}
+# TODO - SAYING.DAT file
+#sub extra_sayings {}
 
 1;
