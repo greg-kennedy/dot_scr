@@ -217,7 +217,6 @@ The following screensavers are currently in rotation:
     * ~~Warp!~~
     * You Bet Your Head
     * Zooommm!
-
 * [iSaver (Intel Demo)](https://winworldpc.com/product/intel-demos/10)
 * [Microsoft Scenes 1.0](https://winworldpc.com/product/microsoft-scenes/10)
     * Impressionist Art Collection
@@ -349,6 +348,21 @@ The following screensavers are currently in rotation:
     * Timepiece
     * Tunnel
     * Wriggly
+* [Gary Larson's The Far Side Screen Saver Collection](https://archive.org/details/farside_screensaver_collection)
+    * Aerial Grounds
+    * Age of Fish
+    * Age of Mammals
+    * Age of Reptiles
+    * Amoeba
+    * Ballooning
+    * Deserted Island
+    * Eggfight
+    * Fishbowl
+    * Hell
+    * Nerd Clock
+    * Ocean
+    * Pterodactyl
+    * The Future
 * [Scott Adams' Dilbert Screen Saver Collection](https://archive.org/details/dilbert_screensaver_collection)
     * Artist Doodles
     * Best Of Dilbert
@@ -392,3 +406,4 @@ The following screensavers are currently in rotation:
     * Scrolling Text
     * Space Battles
     * Storyboards
+  
