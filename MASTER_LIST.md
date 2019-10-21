@@ -349,6 +349,23 @@ The following screensavers are currently in rotation:
     * Timepiece
     * Tunnel
     * Wriggly
+* [Scott Adams' Dilbert Screen Saver Collection](https://archive.org/details/dilbert_screensaver_collection)
+    * Artist Doodles
+    * Best Of Dilbert
+    * Bob Gives Wedgies
+    * Budget Woes
+    * Conference Room of Horrors
+    * Cyberspace
+    * Dilbert Presents
+    * Dilbert at Work
+    * Happy Ratbert
+    * Mad Shredder
+    * Necktie Clock
+    * Out to Lunch
+    * Saint Dogbert
+    * Secretary with a Crossbow
+    * Thor Dog of Thunder
+    * Whack a Lawyer
 * Strange Software screensavers
     * [Chutes](http://www.strangesoftware.com/chutes)
     * [Leaking Roof](http://web.archive.org/web/20051202074123/http://www.strange.co.uk/downarea.htm)
@@ -375,5 +392,3 @@ The following screensavers are currently in rotation:
     * Scrolling Text
     * Space Battles
     * Storyboards
-
-
