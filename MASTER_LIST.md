@@ -380,6 +380,23 @@ The following screensavers are currently in rotation:
     * Secretary with a Crossbow
     * Thor Dog of Thunder
     * Whack a Lawyer
+* [Opus 'n Bill: On the Road Again!](https://archive.org/details/OpusNBill_OnTheRoadAgain)
+    * Ants
+    * Buttheaded Bill
+    * Dancing Opus
+    * Hairball
+    * Information Highway
+    * Midnight Whispers
+    * Opus Flies
+    * Opus Trek
+    * ~~Opus in Space~~
+    * Opus of the Jungle
+    * Pistachio Tester
+    * Rat Race
+    * Skating
+    * Tax This
+    * The Butt Boys
+    * Uneasy Riders
 * Strange Software screensavers
     * [Chutes](http://www.strangesoftware.com/chutes)
     * [Leaking Roof](http://web.archive.org/web/20051202074123/http://www.strange.co.uk/downarea.htm)
