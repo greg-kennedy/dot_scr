@@ -380,6 +380,23 @@ The following screensavers are currently in rotation:
     * Secretary with a Crossbow
     * Thor Dog of Thunder
     * Whack a Lawyer
+* [Opus 'n Bill: Brain Saver](https://archive.org/details/OpusNBill_BrainSaver)
+    * Basselope
+    * Brief Insights
+    * Bungee
+    * Death Toasters
+    * Fish Bowl
+    * Full Moon
+    * Microboost 10,000
+    * Night Cat
+    * Opus Clock
+    * Penguins
+    * Puddy Passion
+    * Quality Time
+    * Silicone Bill
+    * Swinger
+    * System Bugs
+    * Velociraptor
 * [Opus 'n Bill: On the Road Again!](https://archive.org/details/OpusNBill_OnTheRoadAgain)
     * Ants
     * Buttheaded Bill
@@ -423,4 +440,3 @@ The following screensavers are currently in rotation:
     * Scrolling Text
     * Space Battles
     * Storyboards
-  
