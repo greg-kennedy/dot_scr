@@ -305,7 +305,7 @@ my $length =
 chomp $length;
 print "Computed video length $length seconds, ";
 
-my $max_file_size  = 8 * 256 * 1024;
+my $max_file_size  = 8 * 384 * 1024;
 my $target_bitrate = int( $max_file_size / $length );
 my $audio_bitrate  = $saver->{sound} ? 192 : 0;
 my $video_bitrate  = $target_bitrate - $audio_bitrate;
@@ -424,8 +424,9 @@ eval {
       . $detail;
 
     # Post!
-    $r = $client->post( 'statuses/update',
-        { status => $post, media_ids => $media_id } );
+    my $tweet = { status => $post, media_ids => $media_id };
+    if ($saver->{sensitive}) { $tweet->{possibly_sensitive} = 'true' }
+    $r = $client->post( 'statuses/update', $tweet );
     my $last_id = $r->{id_str};
 
     # Add a second "detail" tweet if needed

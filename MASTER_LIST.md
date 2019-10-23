@@ -191,7 +191,7 @@ The following screensavers are currently in rotation:
     * Draw Morph
     * Fish Pro
     * Flying Toasters Pro
-    * Flying Toilets
+    * ~~Flying Toilets~~
     * Frost and Fire
     * ~~Guts~~
     * ~~Logo~~
@@ -217,6 +217,20 @@ The following screensavers are currently in rotation:
     * ~~Warp!~~
     * You Bet Your Head
     * Zooommm!
+* [After Dark: Totally Twisted](https://archive.org/details/TTW320CD)
+    * Bungee Roulette
+    * Chameleon
+    * ComingSoon!
+    * Flying Toilets
+    * FrankenScreen
+    * Message Mayhem
+    * Mike's So-called Life
+    * Mime Hunt
+    * Mowin' Boris
+    * Phlegm Boy
+    * Shock Clocks
+    * Toxic Swamp
+    * Voyeur
 * [iSaver (Intel Demo)](https://winworldpc.com/product/intel-demos/10)
 * [Microsoft Scenes 1.0](https://winworldpc.com/product/microsoft-scenes/10)
     * Impressionist Art Collection

@@ -1,212 +1,99 @@
-package Unit::ADARK32;
+package Unit::AD30TWST;
 use strict;
 use warnings;
 
 ##############################################################################
 # giant module settings meanings
 my %controls = (
-  'AD30' => {
-    'Artist' => {
-      # extra cfg hack
+  'TWISTED' => {
+    'Bungee Roulette' => {
       cfg => [
-        [ 'Medium' => 7 ],
-        [ 'Detail' => 100 ],
-        [ 'Delay'  => 100 ],
+        [ 'Jumper' => 5 ],
+        [ 'Jumps' => 100 ],
+        [ 'Equipment'  => 100 ],
       ]
     },
-    'Bad Dog!' => {
-      sound => 1,
-      cfg   => [ [ 'Discipline' => 100 ], ]
-    },
-    'Bugs' => {
-      # extra cfg hack
-      sound => 1,
-      cfg   => [
-        [ 'Bug Density' => 100 ],
-        undef, # Bug Type
-        [ 'Clear Screen First' => 1 ],
-      ]
-    },
-    'Clocks 3.0' => {
-      sound => 1,
-      cfg   => [
-        [ 'Type'          => 4 ],
-        [ 'Drift Speed'   => 100 ],
-        [ 'Sounds'        => 2 ],     # skipping 'None'
-        [ 'Mutation Rate' => 100 ],
-      ]
-    },
-    'Daredevil Dan' => {
-      sound => 1,
-      cfg   => [ [ 'Insurance Risk' => 100 ], ]
-    },
-    'DOS Shell' => {
-      sound => 1,
-      cfg   => [ undef, [ 'Color' => 4 ], [ 'Speed' => 100 ], ]
-    },
-    'Draw Morph' => { cfg => [ [ 'Morph' => 8 ], [ 'Speed' => 100 ], ] },
-    'Fish Pro'   => {
-      # extra cfg hack
-      sound => 1,
-      cfg   => [
-        [ 'Fish' => 100 ],
-        undef,
-        undef,    # Fish Types
-        [ 'Show Sea Floor' => 1 ],
-      ]
-    },
-    'Flying Toasters Pro' => {
-      sound => 1,
-      cfg   => [
-        [ 'Objects'   => 100 ],
-        [ 'Song Type' => 1 ],
-        [ 'Music'     => undef ],    # always 100%
-        [ 'Karaoke'   => 1 ],
-      ]
-    },
-    #'Flying Toilets' => {
-      #sound => 1,
-      #cfg   => [
-        #[ 'Crowd'       => 100 ],
-        #[ 'Paper'       => 3 ],
-        #[ 'Occupant'    => 4 ],
-        #[ 'Rude Sounds' => 1 ],
-      #]
-    #},
-    'Frost and Fire' => {
-      cfg =>
-        [ [ 'Size' => 100 ], [ 'Palette' => 9 ], [ 'Maximize Speed' => 1 ], ]
-    },
-#    'Guts' => { cfg => [ [ 'Shapes' => 4 ], [ 'Speed' => 100 ], ] },
-#    'Logo' => {
-#      # extra cfg hack
-#      cfg => [
-#        [ 'Speed' => 100 ],
-#      ]
-#    },
-#    'Messages' => {
-#      cfg => [
-#        [ 'Move'  => 2 ],
-#        [ 'Speed' => 100 ],
-#
-#        # TODO: message
-#      ]
-#    },
-    'Nirvana' => {
+    'Chameleon' => {
       cfg => [
-        [ 'Color'        => 8 ],
-        [ 'Redraw Every' => 100 ],
-        [ 'Activity'     => 100 ],
-        [ 'Change Color' => 100 ],
+        [ 'Quantity' => 100 ],
+        [ 'Zest' => 100 ],
+        [ 'Vomiter'  => 100 ],
       ]
     },
-    'Nonsense' => {
+    'ComingSoon!' => {
       cfg => [
-        [ 'How Many'           => 100 ],
-        [ 'Delay'              => 100 ],
-        [ 'Colored Background' => 1 ],
+        [ 'Pace' => 100 ],
+        [ 'Show' => 1 ],
+	undef,
+        [ 'Music' => undef ],
       ]
     },
-    'Photon' => {
-      cfg => [
-        [ 'Length'          => 100 ],
-        [ 'Burst Delay'     => 100 ],
-        [ 'Always Centered' => 1 ],
-        [ 'Burst'           => 4 ],
-      ]
-    },
-#    'Puzzle' => {
-#      sound => 1,
-#      cfg =>
-#        [ [ 'Size' => 2 ], [ 'Speed' => 2 ], undef, [ 'Invert Screen' => 1 ], ]
-#    },
-    'Rat Race' => {
-      sound => 1,
+    'Flying Toilets' => {
       cfg   => [
-        [ 'Training'   => 100 ],
-        [ 'Race Track' => 1 ],
-        [ 'Music'      => undef ],    # always 100%
+        [ 'Crowd'       => 100 ],
+        [ 'Paper'       => 3 ],
+        [ 'Occupant'    => 4 ],
+        [ 'Rude Sounds' => undef ],
       ]
     },
-    'Ray' => {
-      # extra cfg hack
-      cfg => [
-        [ 'Objects'  => 100 ],
-        [ 'Shadows'  => 2 ],
-        [ 'Backdrop' => 2 ],
-	# undef - shapes
-      ]
-    },
-    'Rebound' => {
-      sound => 1,
+    'FrankenScreen' => {
       cfg   => [
-        [ 'Ball Type'          => 2 ],
-        [ 'Wobbly'             => 1 ],
-        [ 'Clear Screen First' => 1 ],
-        [ 'Balls'              => 100 ],
+        [ 'Coherence'   => 4 ],
+        [ 'Blemishes'   => 100 ],
+        [ 'Lifespan'    => 100 ],
+        [ 'Music'       => undef ],
       ]
     },
-#    'Rose' => {
-#      cfg =>
-#        [ [ 'Speed' => 100 ], [ 'Trail Length' => 100 ], [ 'Big Dots' => 1 ], ]
-#    },
-#    'Satori' => {
-#      cfg => [
-#        [ 'Display'     => 6 ],
-#        [ 'Colors'      => 13 ],
-#        [ 'End Clarity' => 100 ],
-#        [ 'Knots'       => 100 ],
-#      ]
-#    },
-#    'SlideShow' => {
-#      # extra cfg hack
-#      cfg => [
-#        undef,
-#        undef,
-#        [ 'FX'    => 9 ],
-#        [ 'Delay' => 100 ],
-#      ]
-#    },
-#    'Spheres' => {
-#      cfg => [
-#        [ 'Max Size'           => 100 ],
-#        [ 'Offset'             => 100 ],
-#        [ 'Clear Every'        => 100 ],
-#        [ 'Clear Screen First' => 1 ],
-#      ]
-#    },
-#    'Spotlight' =>
-#      { cfg => [ [ 'Size' => 100 ], [ 'Speed' => 100 ], [ 'Spots' => 100 ], ] },
-#    'Warp!' => {
-#      cfg => [
-#        [ 'Speed' => 100 ],
-#        [ 'Stars' => 100 ],
-#        [ 'Size'  => 2 ],
-#        [ 'Color' => 1 ],
-#      ]
-#    },
-    'You Bet Your Head' => {
-      sound => 1,
+    'Message Mayhem' => {
+      # TODO: Custom message
       cfg   => [
-        [ 'Contestants'  => 100 ],
-        [ 'Timer'        => 100 ],
-        [ 'Music'        => 100 ],
-        [ 'Show Answers' => 1 ],
+        [ 'Duration'   => 100 ],
+        [ 'Style'   => 3 ],
+        [ 'Message'     => 11 ],
       ]
     },
-    'Zooommm!' => {
-      cfg => [ [ 'Colors' => 20 ], [ 'Speed' => 100 ], [ 'Delay' => 100 ], ]
+    "Mike's So-called Life" => {
+      cfg   => [
+        [ 'Activity Level'   => 100 ],
+      ]
     },
+    'Mime Hunt' => {
+      cfg   => [
+        [ 'Mimes'     => 100 ],
+        [ 'Weapon'    => 3 ],
+        [ 'CyberMood' => 4 ],
+        [ 'Music'     => undef ],
+      ]
+    },
+    "Mowin' Boris" => {
+      cfg   => [
+        [ 'Mower Speed' => 100 ],
+        [ 'Cats'    => 100 ],
+        [ 'Revenge'   => 100 ],
+        [ 'Mower Sound' => undef ],
+      ]
+    },
+    'Phlegm Boy' => {
+      cfg   => [
+        [ 'Behavior' => 100 ],
+        [ 'Mess'    => 100 ],
+      ]
+    },
+    'Shock Clocks' => {
+      cfg   => [
+        [ 'Face' => 3 ],
+        [ 'Drift Speed' => 100 ],
+      ]
+    },
+    'Toxic Swamp' => {
+      cfg   => [
+        [ 'Critters' => 100 ],
+        [ 'Lung Capacity' => 100 ],
+        [ 'Fish Only' => 1 ],
+      ]
+    },
+    'Voyeur' => { cfg => [] },
   },
-  'MULTI' => {
-
-    # multimodules
-    'Apocalypse'   => undef,
-    'Clock Attack' => undef,
-    'Kiss the Sky' => undef,
-    'Make Sense'   => undef,
-    'Mind Warp'    => undef,
-  }
 );
 ##############################################################################
 
@@ -252,22 +139,18 @@ sub info {
   }
 
   return (
-    name     => 'ADARK32',
-    fullname => 'After Dark 3.2',
+    name     => 'AD30TWST',
+    fullname => 'After Dark: Totally Twisted',
     author   => 'Berkeley Systems',
-    payload  => ['ADARK32.zip'],
+    payload  => ['AD30TWST.zip'],
     files    => {
       'WINDOWS/SYSTEM.INI'    => \&edit_systemini,
       'WINDOWS/WIN.INI'       => \&edit_winini,
       'AFTERDRK/AFTERDRK.INI' => \&edit_afterdrkini,
       'AFTERDRK/MODULES.INI'  => \&edit_modulesini,
-
-      #'WINDOWS/AD_PREFS.INI' => \&edit_adprefsini,
     },
     files_custom => {
       'AFTERDRK/ADMODULE.AS3' => \&extra_admodule,
-
-      #'WINDOWS/AD_MESG.ADS' => \&extra_messages,
     },
     weight => $weight,
   );
@@ -316,17 +199,11 @@ sub new {
   my $cfg     = '';
   my $cfg_str = '';
   my $cfg_extra;
-  my $sound;
 
   if ( !$controls{$dir}{$module} ) {
-    $sound   = 1;
     $cfg_str = " (MultiModule, no settings)";
     $cfg     = pack( 'v[4]', 0, 0, 0, 0 );
   } else {
-    if ( $controls{$dir}{$module}{sound} ) {
-      $sound = 1;
-    }
-
     # Set config options
     for ( my $i = 0; $i < 4; $i++ ) {
       my $value;
@@ -336,6 +213,9 @@ sub new {
 
           # always play music
           $value = 100;
+	} elsif ($knob->[0] eq 'Rude Sounds' || $knob->[0] eq 'Mower Sound') {
+          # always play sound
+          $value = 1;
         } else {
           $value = int( rand( $knob->[1] + 1 ) );
           $cfg_str .= ", $knob->[0]: $value" . ( $knob->[1] == 100 ? '%' : '' );
@@ -345,37 +225,6 @@ sub new {
       }
       $cfg .= pack( 'v', $value );
     }
-
-    # extra cfg hacks for certain modules
-    if ( $module eq 'Bugs' ) {
-      my $bugs = int( rand(63) ) + 1;
-      $cfg_str .= ", Bug Types: $bugs";
-      $cfg_extra = "[Bugs]\nBugTypes=$bugs\n";
-    } elsif ( $module eq 'Fish Pro' ) {
-      my $fish = int( rand(1024) ) + 1024;
-      $cfg_str .= ", Fish Types: $fish";
-      $cfg_extra = "[Fish]\nFishTypes=$fish\n";
-    } elsif ( $module eq 'Artist' ) {
-      my @bmps = _dir_parse($basepath . '/AFTERDRK/BITMAPS', 'BMP' );
-
-      my $bmp = _pick(@bmps);
-      $cfg_str .= ", Bitmap: $bmp";
-      $cfg_extra = "[The Artist]\nImage=C:\\AFTERDRK\\BITMAPS\\$bmp\n";
-    } elsif ( $module eq 'Logo' ) {
-      my @bmps = _dir_parse($basepath . '/AFTERDRK/BITMAPS', 'BMP' );
-
-      my $bmp = _pick(@bmps);
-      $cfg_str .= ", Bitmap: $bmp";
-      $cfg_extra = "[Logo Section]\nLogoFile=C:\\AFTERDRK\\BITMAPS\\$bmp\n";
-    } elsif ( $module eq 'Ray' ) {
-      my @trcs = _dir_parse($basepath . '/AFTERDRK/TRACES', 'TRC' );
-
-      my $trc = _pick(@trcs);
-      $cfg_str .= ", Shape: $trc";
-      $cfg_extra = "[Ray]\nRaySceneFile=C:\\AFTERDRK\\TRACES\\$trc\n";
-    } elsif ( $module eq 'SlideShow' ) {
-      $cfg_extra = "[Slide Show]\nCatalogName=BITMAPS\n";
-    }
   }
 
   my $self = {
@@ -384,7 +233,8 @@ sub new {
     settings       => $cfg_str,
     settings_bin   => $cfg,
     settings_extra => $cfg_extra,
-    sound          => $sound,
+    sound          => 1,
+    sensitive      => 1,
     dosbox         => {
       start  => 68000,
       #cycles => 5000,
@@ -398,14 +248,13 @@ sub detail {
   my $self = shift;
 
   return "Module: $self->{module}" . $self->{settings};
-
-#return { settings => "Module: $self->{module}" . $self->{settings}, sound => $self->{sound} };
 }
 
 sub edit_systemini {
   my ( $self, $line ) = @_;
 
   # AD3.0 uses a Driver addition and an entry in 386enh
+  #  there is also a WaveMapper driver
   if ( defined $line ) {
     if ( $line =~ m/^drivers=(.*)$/i ) {
       $line = "drivers=$1 c:\\afterdrk\\adwrap.drv";
@@ -413,6 +262,8 @@ sub edit_systemini {
       $line .= "\ndevice=c:\\afterdrk\\adw30.386";
     } elsif ( $line =~ m/^\[drivers\]$/i ) {
       $line .= "\nadwrap=c:\\afterdrk\\adwrap.drv";
+      $line .= "\nWaveMapper=msacm.drv";
+      $line .= "\nMSACM.msadpcm=msadpcm.acm";
     }
   }
 
@@ -525,23 +376,6 @@ sub extra_admodule {
     # copy delimiter too
     if ( !eof $fpi ) {
       print $fpo _rd( $fpi, 2 );
-    }
-  }
-}
-
-sub extra_messages {
-  my ( $self, $input, $output ) = @_;
-
-  # If MESSAGES is picked we have more work to do
-  if ( $self->{module} eq 'Messages' ) {
-    my $msgnum = int( rand(8) );
-    open( my $fpi, '<:raw', $input )  or die "Couldn't open $input: $!";
-    open( my $fpo, '>:raw', $output ) or die "Can't open $output file: $!";
-
-    for ( my $i = 0; $i < 8; $i++ ) {
-      read $fpi, my $buf, 246;
-      substr( $buf, 44, 2 ) = pack( 'v', ( $i == $msgnum ) );
-      print $fpo $buf;
     }
   }
 }
