@@ -231,6 +231,18 @@ The following screensavers are currently in rotation:
     * Shock Clocks
     * Toxic Swamp
     * Voyeur
+* [After Dark: X-Men Screen Saver](https://archive.org/details/afterdark_x-men_screen_saver)
+    * Beast
+    * Berzerk
+    * Magneto
+    * Sentinels
+    * Sound F/X
+    * Telepathy
+    * X-Clocks
+    * X-Logos
+    * X-Men Action
+    * X-Trivia
+    * X-Women
 * [iSaver (Intel Demo)](https://winworldpc.com/product/intel-demos/10)
 * [Microsoft Scenes 1.0](https://winworldpc.com/product/microsoft-scenes/10)
     * Impressionist Art Collection
