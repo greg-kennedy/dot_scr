@@ -45,7 +45,7 @@ sub new {
 sub detail {
     my $self = shift;
 
-    return sprintf("Date %04d-%02-%02d (Day %d)",
+    return sprintf("Date %04d-%02d-%02d (Day %d)",
       $self->{current_year}, $self->{current_month}, $self->{current_day}, $self->{day});
 }
 

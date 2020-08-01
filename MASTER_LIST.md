@@ -466,3 +466,14 @@ The following screensavers are currently in rotation:
     * Scrolling Text
     * Space Battles
     * Storyboards
+* [Jurassic Park: The Screen Saver (CD Version)](https://archive.org/details/jurassic_park_-_the_screen_saver)
+    * Welcome to Jurassic Park
+    * Tour of Jurassic Park
+    * Something's Watching
+    * The Hunt
+    * The Chase
+    * Character Dossier
+    * Jurassic Park Encyclopedia
+    * Park Operations
+    * Lost In Jurassic Park
+    * Slide Show
