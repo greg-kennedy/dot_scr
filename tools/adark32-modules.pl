@@ -33,29 +33,29 @@ my $i = 0;
         my $realname = unpack "Z$len", _rd($fpi, $len);
         $len = unpack 'C', _rd($fpi, 1);
         my $filename = unpack "Z$len", _rd($fpi, $len);
-	printf( "%02d | %s | %s |", $i, $realname, $filename);
-	my $unknown = unpack 'V', _rd($fpi, 4);
-	my $volume = unpack 'v', _rd($fpi, 2);
-	print " vol=$volume | ";
-	my $unk_1 = unpack 'V', _rd($fpi, 4);
-	my $unk_2 = unpack 'V', _rd($fpi, 4);
-	printf(' %08x %04x %04x | ', $unknown, $unk_1, $unk_2);
+        printf( "%02d | %s | %s |", $i, $realname, $filename);
+        my $unknown = unpack 'V', _rd($fpi, 4);
+        my $volume = unpack 'v', _rd($fpi, 2);
+        print " vol=$volume | ";
+        my $unk_1 = unpack 'V', _rd($fpi, 4);
+        my $unk_2 = unpack 'V', _rd($fpi, 4);
+        printf(' %08x %04x %04x | ', $unknown, $unk_1, $unk_2);
 
-	# defaults
+        # defaults
         my ( $d_ct0, $d_ct1, $d_ct2, $d_ct3 ) = unpack 'v[4]', _rd($fpi, 8);
-	# current settings
+        # current settings
         my ( $ct0, $ct1, $ct2, $ct3 ) = unpack 'v[4]', _rd($fpi, 8);
 
-	print "$ct0 / $d_ct0, $ct1 / $d_ct1, $ct2 / $d_ct2, $ct3 / $d_ct3\n";
-	# more unknown (sound?)
-	_rd($fpi, 3);
+        print "$ct0 / $d_ct0, $ct1 / $d_ct1, $ct2 / $d_ct2, $ct3 / $d_ct3\n";
+        # more unknown (sound?)
+        _rd($fpi, 3);
 
-	if (!eof $fpi) { _rd($fpi, 0x2) }
-	$i ++;
+        if (!eof $fpi) { _rd($fpi, 0x2) }
+        $i ++;
 #my ( $filename, $realname, $ct0, $ct1, $ct2, $ct3, $vol, $unknown) = unpack 'Z[13]Z[20]v[5]H*', $buf;
 
         #printf("%13s|%20s|%3d|%3d|%3d|%3d|%3d|%s\n", 
-	  #$filename, $realname, $ct0, $ct1, $ct2, $ct3, $vol, $unknown );
+          #$filename, $realname, $ct0, $ct1, $ct2, $ct3, $vol, $unknown );
     }
 
 1;

@@ -13,7 +13,7 @@ open( my $fpi, '<:raw', $ARGV[0] )
         my ( $filename, $realname, $ct0, $ct1, $ct2, $ct3, $vol, $unknown) = unpack 'Z[13]Z[30]n[5]H*', $buf;
 
         printf("%13s|%30s|%3d|%3d|%3d|%3d|%3d|%s\n",
-	  $filename, $realname, $ct0, $ct1, $ct2, $ct3, $vol, $unknown );
+          $filename, $realname, $ct0, $ct1, $ct2, $ct3, $vol, $unknown );
     }
 
 1;

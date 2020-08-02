@@ -134,7 +134,7 @@ my %controls = (
         [ 'Objects'  => 100 ],
         [ 'Shadows'  => 2 ],
         [ 'Backdrop' => 2 ],
-	# undef - shapes
+        # undef - shapes
       ]
     },
     'Rebound' => {

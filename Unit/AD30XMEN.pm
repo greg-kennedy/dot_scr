@@ -50,7 +50,7 @@ my %controls = (
       sound => 1,
       cfg   => [
         [ 'Message'   => 3 ],
-	undef,
+        undef,
         [ 'Clear Screen First' => 1 ],
       ]
     },
@@ -81,7 +81,7 @@ my %controls = (
       sound => 1,
       cfg   => [
         [ 'Timer'     => 100 ],
-	undef,
+        undef,
         [ 'Text Only' => 1 ],
         [ 'Show Answer' => 1 ],
       ]
@@ -217,7 +217,7 @@ sub new {
 
           # always play music
           $value = 100;
-	} elsif ($knob->[0] eq 'Rude Sounds' || $knob->[0] eq 'Mower Sound') {
+        } elsif ($knob->[0] eq 'Rude Sounds' || $knob->[0] eq 'Mower Sound') {
           # always play sound
           $value = 1;
         } else {

@@ -24,7 +24,7 @@ my %controls = (
       cfg => [
         [ 'Pace' => 100 ],
         [ 'Show' => 1 ],
-	undef,
+        undef,
         [ 'Music' => undef ],
       ]
     },
@@ -213,7 +213,7 @@ sub new {
 
           # always play music
           $value = 100;
-	} elsif ($knob->[0] eq 'Rude Sounds' || $knob->[0] eq 'Mower Sound') {
+        } elsif ($knob->[0] eq 'Rude Sounds' || $knob->[0] eq 'Mower Sound') {
           # always play sound
           $value = 1;
         } else {

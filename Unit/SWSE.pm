@@ -172,7 +172,7 @@ sub new {
         my $ini_modname = $3;
         if ( exists $modules{$ini_modname} ) {
           $modules{$ini_modname}{id} = $id;
-	  print $ini_modname . "=" . $id . "\n";
+          print $ini_modname . "=" . $id . "\n";
         } else {
           print "Skipping unknown module $ini_modname ($ini_modfilename)\n";
         }

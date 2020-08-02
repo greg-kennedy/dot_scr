@@ -95,7 +95,7 @@ sub new {
 
     my $self = {
         module      => $module,
-	module_file => $data{$module}{filename},
+        module_file => $data{$module}{filename},
         id          => $data{$module}{id},
         offset      => $data{$module}{offset},
         sound       => 1,
@@ -147,13 +147,13 @@ sub edit_antswini {
     if ( $line ) {
       if ( $line =~ m/^Saver Selected=/i ) {
           $line = "Saver Selected=$self->{id}";
-	} elsif ($line =~ m/^Saver Offset=/i) {
-	  $line = "Saver Offset=$self->{offset}"
-	} elsif ($line =~ m/^Last Saver=/i) {
-	  $line = "Last Saver=$self->{module_file}"
-	} elsif ($line =~ m/^Last Module=/i) {
-	  $line = "Last Module=$self->{module}"
-	}
+        } elsif ($line =~ m/^Saver Offset=/i) {
+          $line = "Saver Offset=$self->{offset}"
+        } elsif ($line =~ m/^Last Saver=/i) {
+          $line = "Last Saver=$self->{module_file}"
+        } elsif ($line =~ m/^Last Module=/i) {
+          $line = "Last Module=$self->{module}"
+        }
     }
 
     return $line;
